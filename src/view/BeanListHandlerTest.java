@@ -21,9 +21,9 @@ public class BeanListHandlerTest {
         try {
             List<Book> list = (List<Book>) qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler(Book.class));
 
-            for(Book book:list){
+            for(Book book:list)
                 System.out.println(book.getId() + "--" + book.getName() + "--" + book.getPrice() + "--" + book.getBookCount() + "--" + book.getAuthor());
-            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

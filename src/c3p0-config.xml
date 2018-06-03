@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <c3p0-config>
 
+    -- Edit your database connection...
+
     <default-config>
         <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql:///SampleDB</property>
