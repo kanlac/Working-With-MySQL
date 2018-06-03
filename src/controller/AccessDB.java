@@ -26,32 +26,38 @@ public class AccessDB {
     }
 
 
-    public Boolean update(Book book){
-        int rows=0;
-        QueryRunner qr=new QueryRunner(C3P0Utils.getDataSource());
-        String sql="update books set name=? where id=?";
-        Object[] params={book.getName(),book.getId()};
-        try {
-            rows=qr.update(C3P0Utils.getConnection(), sql, params);
+    public Boolean update(Book book) {
 
+        int rows = 0;
+        QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
+
+        String sql = "UPDATE books SET name = ? WHERE id = ?";
+        Object[] params={book.getName(),book.getId()};
+
+        try {
+            rows = qr.update(C3P0Utils.getConnection(), sql, params);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rows > 0;
 
+        return rows > 0;
     }
 
 
-    public Boolean deleteBook(Book book){
-        int rows=0;
-        QueryRunner qr=new QueryRunner(C3P0Utils.getDataSource());
-        String sql = "delete from books where id=?";
-        Object[] params={book.getId()};
+    public Boolean deleteBook(Book book) {
+
+        int rows = 0;
+        QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
+
+        String sql = "DELETE FROM books WHERE id = ?";
+        Object[] params = { book.getId() };
+
         try {
-            rows=qr.update(C3P0Utils.getConnection(), sql, params);
+            rows = qr.update(C3P0Utils.getConnection(), sql, params);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return rows > 0;
     }
 }
