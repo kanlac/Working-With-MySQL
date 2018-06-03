@@ -1,6 +1,6 @@
 package view;
 
-import controller.AccessDB;
+import controller.DatabaseAccessor;
 import model.Book;
 
 public class BookTest {
@@ -8,7 +8,7 @@ public class BookTest {
     public static void main(String[] args) {
 
         /**
-         * Operations
+         * Uncomment to do operations...
          */
 
         // do insert
@@ -35,8 +35,7 @@ public class BookTest {
     }
 
     /**
-     * Methods
-     * @return
+     * Customize books information...
      */
 
     public static Boolean insertBook() {
@@ -49,7 +48,7 @@ public class BookTest {
         book.setBookCount(6);
         book.setAuthor("茨威格");
 
-        AccessDB controller = new AccessDB();
+        DatabaseAccessor controller = new DatabaseAccessor();
         return controller.insert(book);
     }
 
@@ -58,9 +57,9 @@ public class BookTest {
         Book book = new Book();
 
         book.setId(8);
-        book.setName("山海经");
+        book.setName("逃避自由");
 
-        AccessDB controller = new AccessDB();
+        DatabaseAccessor controller = new DatabaseAccessor();
         return controller.update(book);
     }
 
@@ -70,7 +69,7 @@ public class BookTest {
 
         book.setId(0);
 
-        AccessDB controller = new AccessDB();
+        DatabaseAccessor controller = new DatabaseAccessor();
         return controller.deleteBook(book);
     }
 }

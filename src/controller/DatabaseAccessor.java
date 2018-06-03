@@ -6,7 +6,7 @@ import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.SQLException;
 
-public class AccessDB {
+public class DatabaseAccessor {
 
     public Boolean insert(Book book){
 

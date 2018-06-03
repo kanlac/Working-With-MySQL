@@ -16,7 +16,7 @@ public class BeanListHandlerTest {
     public static void main(String[] args) {
 
         QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
-        String sql = "select * from books";
+        String sql = "SELECT * FROM books";
 
         try {
             List<Book> list = (List<Book>) qr.query(C3P0Utils.getConnection(), sql, new BeanListHandler(Book.class));
